@@ -1,0 +1,112 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "brazil-olist-data-factory"
+		},
+		"DataLakeSinkFromGithub_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DataLakeSinkFromGithub'"
+		},
+		"MySQLLink_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'MySQLLink'"
+		},
+		"MySQLSinkLink_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'MySQLSinkLink'"
+		},
+		"DataLakeSinkFromGithub_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://brazilolistdatastorage.dfs.core.windows.net/"
+		},
+		"GithubDataLink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://github.com/subhammoda/olist-data-pipeline/tree/main/Data/"
+		},
+		"MySQLLink_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "gri03.h.filess.io"
+		},
+		"MySQLLink_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "OlistDatabase_breathown"
+		},
+		"MySQLLink_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "OlistDatabase_breathown"
+		},
+		"MySQLSinkLink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://brazilolistdatastorage.dfs.core.windows.net/"
+		},
+		"RelativeUrlGithubLink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://raw.githubusercontent.com/subhammoda/olist-data-pipeline/refs/heads/main/relative_urls.json"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "brazil-olist-data-factory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"DataLakeSinkFromGithub_accountKey": {
+						"value": "[parameters('DataLakeSinkFromGithub_accountKey')]"
+					},
+					"MySQLLink_password": {
+						"value": "[parameters('MySQLLink_password')]"
+					},
+					"MySQLSinkLink_accountKey": {
+						"value": "[parameters('MySQLSinkLink_accountKey')]"
+					},
+					"DataLakeSinkFromGithub_properties_typeProperties_url": {
+						"value": "[parameters('DataLakeSinkFromGithub_properties_typeProperties_url')]"
+					},
+					"GithubDataLink_properties_typeProperties_url": {
+						"value": "[parameters('GithubDataLink_properties_typeProperties_url')]"
+					},
+					"MySQLLink_properties_typeProperties_server": {
+						"value": "[parameters('MySQLLink_properties_typeProperties_server')]"
+					},
+					"MySQLLink_properties_typeProperties_database": {
+						"value": "[parameters('MySQLLink_properties_typeProperties_database')]"
+					},
+					"MySQLLink_properties_typeProperties_username": {
+						"value": "[parameters('MySQLLink_properties_typeProperties_username')]"
+					},
+					"MySQLSinkLink_properties_typeProperties_url": {
+						"value": "[parameters('MySQLSinkLink_properties_typeProperties_url')]"
+					},
+					"RelativeUrlGithubLink_properties_typeProperties_url": {
+						"value": "[parameters('RelativeUrlGithubLink_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

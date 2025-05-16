@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "brazil-olist-data-factory"
+		},
+		"DataLakeSinkFromGithub_accountKey": {
+			"value": ""
+		},
+		"MySQLLink_password": {
+			"value": ""
+		},
+		"MySQLSinkLink_accountKey": {
+			"value": ""
+		},
+		"DataLakeSinkFromGithub_properties_typeProperties_url": {
+			"value": "https://brazilolistdatastorage.dfs.core.windows.net/"
+		},
+		"GithubDataLink_properties_typeProperties_url": {
+			"value": "https://github.com/subhammoda/olist-data-pipeline/tree/main/Data/"
+		},
+		"MySQLLink_properties_typeProperties_server": {
+			"value": "gri03.h.filess.io"
+		},
+		"MySQLLink_properties_typeProperties_database": {
+			"value": "OlistDatabase_breathown"
+		},
+		"MySQLLink_properties_typeProperties_username": {
+			"value": "OlistDatabase_breathown"
+		},
+		"MySQLSinkLink_properties_typeProperties_url": {
+			"value": "https://brazilolistdatastorage.dfs.core.windows.net/"
+		},
+		"RelativeUrlGithubLink_properties_typeProperties_url": {
+			"value": "https://raw.githubusercontent.com/subhammoda/olist-data-pipeline/refs/heads/main/relative_urls.json"
+		}
+	}
+}
