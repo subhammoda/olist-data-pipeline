@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://github.com/subhammoda/olist-data-pipeline/tree/main/Data",
+			"url": "https://github.com/subhammoda/olist-data-pipeline/tree/main/Data/",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
