@@ -1,0 +1,12 @@
+{
+	"name": "RelativeUrlGithubLink",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://github.com/subhammoda/olist-data-pipeline/blob/main/relative_urls.json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
