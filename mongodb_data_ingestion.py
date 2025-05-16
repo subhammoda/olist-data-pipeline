@@ -9,7 +9,7 @@ class MongoDBDataIngestion():
         self.uri = "mongodb://" + credentials.mongodb_username + ":" + credentials.mongodb_password + "@" + credentials.mongodb_hostname + ":" + credentials.mongodb_port + "/" + credentials.mongodb_database
         self.client = MongoClient(self.uri)
         self.file_path = "./Data/product_category_name_translation.csv"
-        self.table_name = "product_category"
+        self.table_name = "olist_product_category"
 
     def create_mongodb_db(self):
 
