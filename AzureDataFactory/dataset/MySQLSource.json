@@ -1,0 +1,15 @@
+{
+	"name": "MySQLSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MySQLLink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "MySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "`olist_order_payment`"
+		}
+	}
+}

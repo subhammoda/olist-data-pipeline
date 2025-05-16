@@ -1,0 +1,17 @@
+{
+	"name": "RelativeUrlSource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RelativeUrlGithubLink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}
