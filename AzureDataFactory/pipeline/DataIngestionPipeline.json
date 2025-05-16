@@ -1,5 +1,5 @@
 {
-	"name": "GithubDataIngestionPipeline",
+	"name": "DataIngestionPipeline",
 	"properties": {
 		"activities": [
 			{
