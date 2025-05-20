@@ -3,13 +3,6 @@ import pandas as pd
 import credentials
 from pyspark.sql.functions import col,to_date,datediff,current_date,when
 
-# spark setup commands
-spark.conf.set(f"fs.azure.account.auth.type.{storage_account}.dfs.core.windows.net", "OAuth")
-spark.conf.set(f"fs.azure.account.oauth.provider.type.{storage_account}.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-spark.conf.set(f"fs.azure.account.oauth2.client.id.{storage_account}.dfs.core.windows.net", application_id)
-spark.conf.set(f"fs.azure.account.oauth2.client.secret.{storage_account}.dfs.core.windows.net", "P628Q~pKYGoVLSos1VxRWvJZUaSMn0mxnLp~pc.m")
-spark.conf.set(f"fs.azure.account.oauth2.client.endpoint.{storage_account}.dfs.core.windows.net", f"https://login.microsoftonline.com/{directory_id}/oauth2/token")
-
 # read the bronze data
 
 base_path = "abfss://olistdata@brazilolistdatastorage.dfs.core.windows.net/bronze/"
